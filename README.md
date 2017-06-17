@@ -1,4 +1,4 @@
-This is a simple [Logback](http://logback.qos.ch/) appender which pushes logs to [Mattermost](https://mattermost.com/) channel.
+This is a simple [Logback](http://logback.qos.ch/) appender which pushes logs to a [Mattermost](https://mattermost.com/) channel.
 
 # How to setup
 
@@ -11,22 +11,18 @@ Add MattermostAppender configuration to logback.xml file
 	<configuration>
 		...
 		<appender name="MATTERMOST" class="com.github.rafelbev.logback.MattermostAppender">
-			<!-- Mattermost API token -->
-			<token>1111111111-1111111-11111111-111111111</token>
 			<!-- Mattermost incoming webhook uri. Uncomment the lines below to use incoming webhook uri instead of API token. -->
-			<!--
-			<webhookUri>https://hooks.mattermost.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX</webhookUri>
-			-->
-			<!-- Channel that you want to post - default is #general -->
+			<webhookUri>https://mattermost.server.com/hooks/XXXXXXXXXXXXXXXXXXXXXXXX</webhookUri>
+			<!-- Channel that you want to post to -->
 			<channel>#api-test</channel>
 			<!-- Formatting (you can use Mattermost formatting - URL links, code formatting, etc.) -->
 			<layout class="ch.qos.logback.classic.PatternLayout">
-				<pattern>%-4relative [%thread] %-5level %class - %msg%n</pattern>
+				<pattern>%m\nLogLevel: %-5level\nClass: %logger{2}\n</pattern>
 			</layout>
 			<!-- Username of the messages sender -->
 			<username>${HOSTNAME}</username>
-			<!-- Emoji to be used for messages -->
-			<iconEmoji>:stuck_out_tongue_winking_eye:</iconEmoji>
+			<!-- Icon to use in template -->
+			<iconUri>https://logback.qos.ch/images/logos/lblogo.jpg</iconUri>
 		</appender>
 
 		<!-- Currently recommended way of using Mattermost appender -->
