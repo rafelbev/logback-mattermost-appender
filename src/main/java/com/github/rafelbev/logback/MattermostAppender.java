@@ -1,4 +1,4 @@
-package com.github.maricn.logback;
+package com.github.rafelbev.logback;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

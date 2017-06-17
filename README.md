@@ -2,7 +2,7 @@ This is a simple [Logback](http://logback.qos.ch/) appender which pushes logs to
 
 # How to setup
 
-Add dependency to com.github.maricn:logback-mattermost-appender:1.2.0 in your pom.xml.
+Add dependency to com.github.rafelbev:logback-mattermost-appender:1.0.0 in your pom.xml.
 
 Add MattermostAppender configuration to logback.xml file
 
@@ -10,7 +10,7 @@ Add MattermostAppender configuration to logback.xml file
 	<?xml version="1.0" encoding="UTF-8" ?>
 	<configuration>
 		...
-		<appender name="MATTERMOST" class="com.github.maricn.logback.MattermostAppender">
+		<appender name="MATTERMOST" class="com.github.rafelbev.logback.MattermostAppender">
 			<!-- Mattermost API token -->
 			<token>1111111111-1111111-11111111-111111111</token>
 			<!-- Mattermost incoming webhook uri. Uncomment the lines below to use incoming webhook uri instead of API token. -->

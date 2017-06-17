@@ -5,11 +5,11 @@
 
     <name>Logback Mattermost Appender</name>
     <description>Logback appender for sending messages to Mattermost chats.</description>
-    <url>https://github.com/maricn/logback-mattermost-appender</url>
+    <url>https://github.com/rafelbev/logback-mattermost-appender</url>
 
-    <groupId>com.github.maricn</groupId>
+    <groupId>com.github.rafelbev</groupId>
     <artifactId>logback-mattermost-appender</artifactId>
-    <version>1.4.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <licenses>
         <license>
@@ -20,27 +20,27 @@
     </licenses>
 
     <scm>
-        <developerConnection>scm:git:https://github.com/maricn/logback-mattermost-appender.git</developerConnection>
-        <connection>scm:git:https://github.com/maricn/logback-mattermost-appender.git</connection>
-        <url>https://github.com/maricn/logback-mattermost-appender</url>
+        <developerConnection>scm:git:https://github.com/rafelbev/logback-mattermost-appender.git</developerConnection>
+        <connection>scm:git:https://github.com/rafelbev/logback-mattermost-appender.git</connection>
+        <url>https://github.com/rafelbev/logback-mattermost-appender</url>
         <tag>HEAD</tag>
     </scm>
 
     <developers>
         <developer>
-            <name>Nikola Marić</name>
-            <email>maricn@gmail.com</email>
+            <name>Raphael Borg Ellul Vincenti</name>
+            <email>raphael@neo-tix.com</email>
         </developer>
     </developers>
 
     <distributionManagement>
         <repository>
-            <id>ossrh-releases-maricn</id>
+            <id>ossrh-releases-rafelbev</id>
             <name>SonatypeReleases</name>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
         <snapshotRepository>
-            <id>ossrh-snapshots-maricn</id>
+            <id>ossrh-snapshots-rafelbev</id>
             <name>SonatypeSnapshots</name>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
@@ -85,7 +85,7 @@
                 <version>1.6.3</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <serverId>ossrh-snapshots-maricn</serverId>
+                    <serverId>ossrh-snapshots-rafelbev</serverId>
                     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
@@ -125,7 +125,7 @@
                                     <goal>sign</goal>
                                 </goals>
                                 <configuration>
-                                    <keyname>038BFBA9</keyname>
+                                    <keyname>68425ABE</keyname>
                                 </configuration>
                             </execution>
                         </executions>
