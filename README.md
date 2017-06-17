@@ -1,25 +1,25 @@
-This is a simple [Logback](http://logback.qos.ch/) appender which pushes logs to [Slack](https://slack.com/) channel.
+This is a simple [Logback](http://logback.qos.ch/) appender which pushes logs to [Mattermost](https://mattermost.com/) channel.
 
 # How to setup
 
-Add dependency to com.github.maricn:logback-slack-appender:1.2.0 in your pom.xml.
+Add dependency to com.github.maricn:logback-mattermost-appender:1.2.0 in your pom.xml.
 
-Add SlackAppender configuration to logback.xml file
+Add MattermostAppender configuration to logback.xml file
 
 ```
 	<?xml version="1.0" encoding="UTF-8" ?>
 	<configuration>
 		...
-		<appender name="SLACK" class="com.github.maricn.logback.SlackAppender">
-			<!-- Slack API token -->
+		<appender name="MATTERMOST" class="com.github.maricn.logback.MattermostAppender">
+			<!-- Mattermost API token -->
 			<token>1111111111-1111111-11111111-111111111</token>
-			<!-- Slack incoming webhook uri. Uncomment the lines below to use incoming webhook uri instead of API token. -->
+			<!-- Mattermost incoming webhook uri. Uncomment the lines below to use incoming webhook uri instead of API token. -->
 			<!--
-			<webhookUri>https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX</webhookUri>
+			<webhookUri>https://hooks.mattermost.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX</webhookUri>
 			-->
 			<!-- Channel that you want to post - default is #general -->
 			<channel>#api-test</channel>
-			<!-- Formatting (you can use Slack formatting - URL links, code formatting, etc.) -->
+			<!-- Formatting (you can use Mattermost formatting - URL links, code formatting, etc.) -->
 			<layout class="ch.qos.logback.classic.PatternLayout">
 				<pattern>%-4relative [%thread] %-5level %class - %msg%n</pattern>
 			</layout>
@@ -29,9 +29,9 @@ Add SlackAppender configuration to logback.xml file
 			<iconEmoji>:stuck_out_tongue_winking_eye:</iconEmoji>
 		</appender>
 
-		<!-- Currently recommended way of using Slack appender -->
-		<appender name="ASYNC_SLACK" class="ch.qos.logback.classic.AsyncAppender">
-			<appender-ref ref="SLACK" />
+		<!-- Currently recommended way of using Mattermost appender -->
+		<appender name="ASYNC_MATTERMOST" class="ch.qos.logback.classic.AsyncAppender">
+			<appender-ref ref="MATTERMOST" />
 			<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
 				<level>ERROR</level>
 			</filter>
@@ -39,7 +39,7 @@ Add SlackAppender configuration to logback.xml file
 
 		<root>
 			<level value="ALL" />
-			<appender-ref ref="ASYNC_SLACK" />
+			<appender-ref ref="ASYNC_MATTERMOST" />
 		</root>
 
 	</configuration>

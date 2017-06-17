@@ -19,9 +19,9 @@ import ch.qos.logback.core.Layout;
 import ch.qos.logback.core.LayoutBase;
 import ch.qos.logback.core.UnsynchronizedAppenderBase;
 
-public class SlackAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
+public class MattermostAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
-    private final static String API_URL = "https://slack.com/api/chat.postMessage";
+    private final static String API_URL = "https://mattermost.com/api/chat.postMessage";
     private static Layout<ILoggingEvent> defaultLayout = new LayoutBase<ILoggingEvent>() {
         public String doLayout(ILoggingEvent event) {
             return "-- [" + event.getLevel() + "]" +
@@ -49,7 +49,7 @@ public class SlackAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
             }
         } catch (Exception ex) {
             ex.printStackTrace();
-            addError("Error posting log to Slack.com (" + channel + "): " + evt, ex);
+            addError("Error posting log to Mattermost.com (" + channel + "): " + evt, ex);
         }
     }
 
